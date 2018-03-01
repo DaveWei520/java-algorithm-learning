@@ -1,5 +1,7 @@
 package com.weiyu.algorithm.demo.sort;
 
+import java.util.Arrays;
+
 /**
  * 插入排序
  */
@@ -18,8 +20,7 @@ public class InsertSortDemo {
             }
             array[j+1]=insertNum;
         }
-        for (int val:array)
-            System.out.println(val);
+        System.out.println(Arrays.toString(array));
     }
 
     public static void main(String[] args) {
