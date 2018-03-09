@@ -1,4 +1,4 @@
-package com.weiyu.algorithm.demo.sort;
+package com.weiyu.algorithm.sort.demo;
 
 import java.util.Arrays;
 
@@ -14,16 +14,16 @@ public class InsertSortDemo {
         if (array.length < 1)
             return;
         int insertNum;
-        for (int i=1; i<array.length;i++){
+        for (int i = 1; i < array.length; i++) {
             insertNum = array[i];
-            int j = i -1;
-            while (j>=0 && array[j]>insertNum){
-                array[j+1]=array[j];
+            int j = i - 1;
+            while (j >= 0 && array[j] > insertNum) {
+                array[j + 1] = array[j];
                 j--;
             }
-            array[j+1]=insertNum;
+            array[j + 1] = insertNum;
         }
-        System.out.println("排序后==="+Arrays.toString(array));
+        System.out.println("排序后===" + Arrays.toString(array));
     }
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.weiyu.algorithm.demo.sort;
+package com.weiyu.algorithm.sort.demo;
 
 import java.util.Arrays;
 
@@ -7,14 +7,14 @@ import java.util.Arrays;
  */
 public class SelectSortDemo {
 
-    public static void selectSort(int[] array){
+    public static void selectSort(int[] array) {
         if (array.length < 1)
             return;
-        for (int i=0; i<array.length; i++){
+        for (int i = 0; i < array.length; i++) {
             int pos = i;
             int value = array[i];
-            for (int j=i+1; j<array.length; j++){
-                if (array[j]<value){
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[j] < value) {
                     value = array[j];
                     pos = j;
                 }
@@ -22,7 +22,7 @@ public class SelectSortDemo {
             array[pos] = array[i];
             array[i] = value;
         }
-        System.out.println("排序后==="+ Arrays.toString(array));
+        System.out.println("排序后===" + Arrays.toString(array));
     }
 
     public static void main(String[] args) {
