@@ -51,11 +51,6 @@ public class MergeSortDemo {
         while (j <= right) {
             temp[t++] = array[j++];
         }
-        //将temp中的元素全部拷贝回原数组中
-        /*t = 0;
-        while (left <= right){
-            array[t++] = temp[t++];
-        }*/
         for (int k = 0; k < t; k++)
             array[left + k] = temp[k];
     }
