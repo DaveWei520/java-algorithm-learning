@@ -14,17 +14,17 @@ public class MergeSortDemo {
     public static void mergeSort(int[] array) {
         //在排序前，先建立一个长度等于原数组的临时数组，避免递归中频繁开辟空间
         int[] temp = new int[array.length];
-        sort(array, 0, array.length - 1, temp);
+        divide(array, 0, array.length - 1, temp);
         System.out.println("归并排序后===" + Arrays.toString(array));
     }
 
-    private static void sort(int[] array, int left, int right, int[] temp) {
+    private static void divide(int[] array, int left, int right, int[] temp) {
         if (left < right) {
             int mid = (left + right) / 2;
             //左边归并排序，使得左子序列有序
-            sort(array, left, mid, temp);
+            divide(array, left, mid, temp);
             //右边归并排序，使得左子序列有序
-            sort(array, mid + 1, right, temp);
+            divide(array, mid + 1, right, temp);
             //将两个有序子数组合并
             merge(array, left, mid, right, temp);
         }
