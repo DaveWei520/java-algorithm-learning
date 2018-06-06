@@ -1,4 +1,4 @@
-package com.weiyu.algorithm.sort;
+package willem.weiyu.algorithm.sort;
 
 import java.util.Arrays;
 

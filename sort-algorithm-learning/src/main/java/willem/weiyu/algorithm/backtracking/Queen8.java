@@ -1,4 +1,4 @@
-package com.weiyu.algorithm.backtracking;
+package willem.weiyu.algorithm.backtracking;
 
 /**
  * 八皇后问题
