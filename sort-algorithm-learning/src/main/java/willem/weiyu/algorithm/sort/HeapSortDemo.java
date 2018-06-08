@@ -25,13 +25,13 @@ public class HeapSortDemo {
 
     private static void buildMaxHeap(int[] array, int lastIndex) {
         //从lastIndex处节点（最后一个节点）的父节点开始
-        for (int i = (lastIndex - 1) / 2; i >= 0; i--) {
+        for (int i = lastIndex / 2; i >= 0; i--) {
             //k保存正在判断的节点
             int k = i;
             //如果当前k节点的子节点存在
-            while (k * 2 + 1 <= lastIndex) {
+            while (2 * k <= lastIndex) {
                 //k节点的左子节点的索引
-                int biggerIndex = 2 * k + 1;
+                int biggerIndex = 2 * k;
                 //如果biggerIndex小于lastIndex，即biggerIndex+1代表的k节点的右子节点存在
                 if (biggerIndex < lastIndex) {
                     //若果右子节点的值较大
