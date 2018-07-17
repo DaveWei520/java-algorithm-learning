@@ -24,5 +24,4 @@
 hs_err_pid*
 
 /.idea/
-/sort-algorithm-learning/sort-algorithm-learning.iml
-/sort-algorithm-learning/target/
+/target/
