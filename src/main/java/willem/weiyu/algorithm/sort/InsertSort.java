@@ -12,7 +12,7 @@ import java.util.Arrays;
  * 时间复杂度O(n^2)
  * 空间复杂度O(1)
  */
-public class InsertSortDemo {
+public class InsertSort {
 
     public static void insertSort(int[] array) {
         if (array.length < 1)

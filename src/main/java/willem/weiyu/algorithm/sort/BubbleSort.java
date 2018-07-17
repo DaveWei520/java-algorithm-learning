@@ -14,7 +14,7 @@ import java.util.Arrays;
  * 时间复杂度O(n^2)
  * 空间复杂度O(1)
  */
-public class BubbleSortDemo {
+public class BubbleSort {
 
     public static void bubbleSort(int[] array) {
         int length = array.length;

@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * 快速排序
  */
-public class QuickSortDemo {
+public class QuickSort {
 
     public static void quickSort(int[] array) {
         quickSort(array, 0, array.length - 1);

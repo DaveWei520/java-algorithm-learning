@@ -10,7 +10,7 @@ import java.util.Arrays;
  * 将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构造成一个堆，
  * 这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。
  */
-public class HeapSortDemo {
+public class HeapSort {
 
     public static void headSort(int[] array) {
         int length = array.length;

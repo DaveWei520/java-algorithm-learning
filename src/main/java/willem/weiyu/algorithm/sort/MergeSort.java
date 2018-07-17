@@ -9,7 +9,7 @@ import java.util.Arrays;
  * 将已有序的子序列合并，得到完全有序的序列；
  * 即先使每个子序列有序，再使子序列段间有序。
  */
-public class MergeSortDemo {
+public class MergeSort {
 
     public static void mergeSort(int[] array) {
         //在排序前，先建立一个长度等于原数组的临时数组，避免递归中频繁开辟空间
