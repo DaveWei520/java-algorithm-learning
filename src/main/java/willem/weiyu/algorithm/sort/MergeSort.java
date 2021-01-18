@@ -23,7 +23,7 @@ public class MergeSort {
             int mid = (left + right) / 2;
             //左边归并排序，使得左子序列有序
             divide(array, left, mid, temp);
-            //右边归并排序，使得左子序列有序
+            //右边归并排序，使得右子序列有序
             divide(array, mid + 1, right, temp);
             //将两个有序子数组合并
             merge(array, left, mid, right, temp);
