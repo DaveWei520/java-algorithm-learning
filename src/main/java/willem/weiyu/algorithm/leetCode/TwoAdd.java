@@ -31,26 +31,19 @@ public class TwoAdd {
         //是否进位
         boolean flag = false;
         for (int i = 0; i < total; i++) {
-            Integer temp = 0;
+            Integer temp;
             int l1 = list1.get(i);
             int l2 = list2.get(i);
             int sum = l1 + l2;
+            if (flag){
+                sum +=1;
+                flag = false;
+            }
             if (sum >= 10) {
                 flag = true;
                 temp = sum % 10;
             } else {
                 temp = sum;
-            }
-            if (flag){
-                if (i > 0) {
-                    temp += 1;
-                    if (temp >=10){
-                        temp = 0;
-                        flag = true;
-                    } else {
-                        flag = false;
-                    }
-                }
             }
             result.add(temp);
         }
