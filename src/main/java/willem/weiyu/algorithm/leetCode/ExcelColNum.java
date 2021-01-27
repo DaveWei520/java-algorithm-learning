@@ -7,16 +7,16 @@ package willem.weiyu.algorithm.leetCode;
  */
 public class ExcelColNum {
 
-    public static int col2Int(String str){
+    public static int col2Int(String str) {
         char[] charArr = str.toCharArray();
         int result = 0;
-        for (int i=0; i< charArr.length;i++) {
+        for (int i = 0; i < charArr.length; i++) {
             result = (charArr[i] - 'A' + 1) + 26 * result;
         }
         return result;
     }
 
-    public static String colIndex2str(int index){
+    public static String colIndex2str(int index) {
         if (index <= 0) {
             return null;
         }
@@ -28,7 +28,7 @@ public class ExcelColNum {
             }
             columnStr = ((char) (index % 26 + 'A')) + columnStr;
             index = (index - index % 26) / 26;
-            } while (index > 0);
+        } while (index > 0);
         return columnStr;
     }
 
