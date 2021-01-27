@@ -38,10 +38,11 @@ public class MergeSort {
         //临时数组指针
         int t = 0;
         while (i <= mid && j <= right) {
-            if (array[i] <= array[j])
+            if (array[i] <= array[j]) {
                 temp[t++] = array[i++];
-            else
+            } else {
                 temp[t++] = array[j++];
+            }
         }
         //将左边剩余元素填充进temp中
         while (i <= mid) {
@@ -51,8 +52,9 @@ public class MergeSort {
         while (j <= right) {
             temp[t++] = array[j++];
         }
-        for (int k = 0; k < t; k++)
+        for (int k = 0; k < t; k++) {
             array[left + k] = temp[k];
+        }
     }
 
     public static void main(String[] args) {
