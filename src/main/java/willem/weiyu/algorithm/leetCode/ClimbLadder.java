@@ -5,7 +5,7 @@ package willem.weiyu.algorithm.leetCode;
  * @create: 2021/01/26 16:23
  * @description: 假设一个楼梯有 N 阶台阶，人每次最多可以跨 M 阶，求总共的爬楼梯方案数
  */
-public class climbLadder {
+public class ClimbLadder {
 
     /**
      * 可以转化为f(n) = f(n-1) + f(n-2)
