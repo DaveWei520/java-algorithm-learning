@@ -5,7 +5,7 @@ package willem.weiyu.algorithm.leetCode;
  * @Description No5 给你一个字符串 s，找到 s 中最长的回文子串
  * @Date 2021/1/25 22:27
  */
-public class LongestPalindrome {
+public class No5 {
 
     public static String solution(String s){
         int n = s.length();

@@ -12,7 +12,7 @@ import java.util.List;
  *      7->0->8
  * @Date 2021/1/18 23:06
  */
-public class TwoAdd {
+public class No2 {
 
     public static List<Integer> solution1(List<Integer> list1, List<Integer> list2){
         int len1 = list1.size();

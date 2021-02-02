@@ -5,7 +5,7 @@ package willem.weiyu.algorithm.leetCode;
  * @create: 2021/01/31 14:08
  * @description: No7 给你一个 32 位的有符号整数 x ，返回 x 中每位上的数字反转后的结果
  */
-public class ReverseInt {
+public class No7 {
 
     public static int solution(int x){
         int result = 0;

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
  * @Description No4 给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数
  * @Date 2021/1/19 22:37
  */
-public class Median {
+public class No4 {
 
     public static float solution(List<Integer> list1,List<Integer> list2){
         List<Integer> totalList = new ArrayList<>();
