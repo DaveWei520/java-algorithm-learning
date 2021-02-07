@@ -3,7 +3,7 @@ package willem.weiyu.algorithm.leetCode;
 /**
  * @author: willem
  * @create: 2021/02/07 11:58
- * @description:
+ * @description: 编写一个函数来查找字符串数组中的最长公共前缀。
  */
 public class MaxPrefix {
 
