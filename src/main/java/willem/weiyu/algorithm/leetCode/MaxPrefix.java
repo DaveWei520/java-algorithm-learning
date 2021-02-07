@@ -15,23 +15,22 @@ public class MaxPrefix {
         if (strs.length==1){
             return pre.append(strs[0]).toString();
         }
-        for(int i=0; i< strs.length;i++){
-            for(int j = i+1; j< strs.length;j++){
-                char[] arr = strs[i].toCharArray();
-                char[] arr2 = strs[j].toCharArray();
-                StringBuilder tempStr = new StringBuilder();
-                int size = arr.length >= arr2.length? arr2.length:arr.length;
-                for(int k= 0; k< size; k++){
-                    char temp = arr[k];
-                    char temp2 = arr2[k];
-                    if(temp != temp2){
-                        break;
-                    }
+        char[] arr = strs[0].toCharArray();
+        pre.append(strs[0]);
+        for(int i=1; i< strs.length;i++){
+            char[] arr2 = strs[i].toCharArray();
+            StringBuilder tempStr = new StringBuilder();
+            int size = arr.length >= arr2.length? arr2.length:arr.length;
+            for(int k= 0; k< size; k++){
+                char temp = arr[k];
+                char temp2 = arr2[k];
+                if(temp == temp2){
                     tempStr.append(temp);
                 }
-                if(pre.length()< tempStr.length()){
-                    pre = tempStr;
-                }
+            }
+
+            if(pre.length() > tempStr.length()){
+                pre = tempStr;
             }
         }
         return pre.toString();
@@ -65,7 +64,7 @@ public class MaxPrefix {
     }
 
     public static void main(String[] args) {
-        String[] strings = new String[]{"a","b","ab"};
+        String[] strings = new String[]{"ab","b","ab"};
         System.out.println(longestCommonPrefix(strings));
         System.out.println(solution2(strings));
     }
