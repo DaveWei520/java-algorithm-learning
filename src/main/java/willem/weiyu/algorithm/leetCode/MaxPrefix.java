@@ -37,8 +37,36 @@ public class MaxPrefix {
         return pre.toString();
     }
 
+    public static String solution2(String[] strArr){
+        String prefix = "";
+        if (strArr == null|| strArr.length ==0){
+            return prefix;
+        }
+        if (strArr.length == 1){
+            return strArr[0];
+        }
+        int index = 0;
+        for (int i=0;i< strArr.length;i++){
+            index = strArr[index].length() < strArr[i].length()? i:index;
+        }
+        prefix = strArr[index];
+        for(int i=0; i< strArr.length;i++){
+            String temp = prefix;
+            //判断与第一个元素的相同字符
+            while (!strArr[i].startsWith(temp)){
+                temp = temp.substring(0, temp.length()-1);
+                if (temp.length() == 0){
+                    return "";
+                }
+            }
+            prefix = temp;
+        }
+        return prefix;
+    }
+
     public static void main(String[] args) {
-        String[] strings = new String[]{"abc","b","ab"};
+        String[] strings = new String[]{"a","b","ab"};
         System.out.println(longestCommonPrefix(strings));
+        System.out.println(solution2(strings));
     }
 }
