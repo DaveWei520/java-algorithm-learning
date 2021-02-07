@@ -49,7 +49,7 @@ public class TraversalTree {
         stack.push(root);
         while (!stack.isEmpty()){
             TreeNode node = stack.pop();
-            System.out.println(node.getData());
+            System.out.print(node.getData()+"->");
             if (node.getRight() != null){
                 stack.push(node.getRight());
             }
@@ -57,6 +57,7 @@ public class TraversalTree {
                 stack.push(node.getLeft());
             }
         }
+        System.out.println("");
     }
 
     /**
@@ -64,7 +65,19 @@ public class TraversalTree {
      * @param root
      */
     public static void inTraversal(TreeNode root){
-
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode node = root;
+        while (node != null || !stack.isEmpty()){
+            if (node != null) {
+                stack.push(node);
+                node = node.left;
+            } else {
+                TreeNode tem = stack.pop();
+                System.out.print(tem.data+"->");
+                node = tem.right;
+            }
+        }
+        System.out.println("");
     }
 
     /**
@@ -72,7 +85,28 @@ public class TraversalTree {
      * @param root
      */
     public static void postTraversal(TreeNode root){
+        TreeNode cur, pre = null;
 
+        Stack<TreeNode> stack = new Stack<>();
+        stack.push(root);
+
+        while (!stack.empty()) {
+            cur = stack.peek();
+            if ((cur.left == null && cur.right == null) || (pre != null && (pre == cur.left || pre == cur.right))) {
+                System.out.print(cur.data + "->");
+                stack.pop();
+                pre = cur;
+            } else {
+                if (cur.right != null){
+                    stack.push(cur.right);
+                }
+
+                if (cur.left != null){
+                    stack.push(cur.left);
+                }
+            }
+        }
+        System.out.println("");
     }
 
     /**
@@ -84,7 +118,7 @@ public class TraversalTree {
         queue.offer(root);
         while (!queue.isEmpty()){
             TreeNode node = queue.poll();
-            System.out.println(node.getData());
+            System.out.print(node.getData()+"->");
             if (node.getLeft() != null){
                 queue.offer(node.left);
             }
@@ -92,8 +126,17 @@ public class TraversalTree {
                 queue.offer(node.getRight());
             }
         }
+        System.out.println("");
     }
 
+    /**
+     *      1
+     *    /  \
+     *   2   3
+     *  /\  /\
+     * 4 5 6 7
+     * @param args
+     */
     public static void main(String[] args) {
         TreeNode root = new TreeNode();
         root.setData(1);
@@ -121,8 +164,13 @@ public class TraversalTree {
         two.setRight(five);
         three.setLeft(six);
         three.setRight(seven);
+
         System.out.println("======pre======");
         preTraversal(root);
+        System.out.println("======in======");
+        inTraversal(root);
+        System.out.println("======post======");
+        postTraversal(root);
         System.out.println("======level======");
         levelTraversal(root);
     }
