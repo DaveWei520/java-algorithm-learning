@@ -3,9 +3,9 @@ package willem.weiyu.algorithm.leetCode;
 /**
  * @author: willem
  * @create: 2021/02/07 11:58
- * @description: 编写一个函数来查找字符串数组中的最长公共前缀。
+ * @description: 编写一个函数来查找字符串数组中的最长公共前缀，如果不存在公共前缀，返回空字符串 ""
  */
-public class MaxPrefix {
+public class No14 {
 
     public static String longestCommonPrefix(String[] strs) {
         StringBuilder pre = new StringBuilder();
