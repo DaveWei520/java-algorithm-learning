@@ -10,6 +10,13 @@ import java.util.List;
  * @description: 给你一个包含n个整数的数组nums，判断nums中是否存在三个元素 a，b，c，使得a+b+c=0？请你找出所有和为0且不重复的三元组
  */
 public class No15 {
+    /**
+     * 时间复杂度：O(N^2)，其中N是数组的长度。
+     * 空间复杂度：O(logN)。我们忽略存储答案的空间，额外的排序的空间复杂度为O(logN)。然而我们修改了输入的数组，在实际情况下不一定允许，因此也可以看成使用了一个额外的数组存储了
+     * 的副本并进行排序，空间复杂度为O(N)
+     * @param arr
+     * @return
+     */
     public static List<List<Integer>> solution(int[] arr){
         if (arr == null || arr.length < 3){
             return null;
