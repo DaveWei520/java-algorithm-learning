@@ -7,12 +7,22 @@ package willem.weiyu.algorithm.leetCode;
  */
 public class No5 {
 
+    /**
+     * 动态规划
+     * 时间复杂度：O(n^2)，其中n是字符串的长度。动态规划的状态总数为O(n^2)，对于每个状态，我们需要转移的时间为O(1)
+     * 空间复杂度：O(n^2)，即存储动态规划状态需要的空间
+     * @param s
+     * @return
+     */
     public static String solution(String s){
+        if (s == null || s.isEmpty()){
+            return "";
+        }
         int n = s.length();
         boolean[][] dp = new boolean[n][n];
         String ans = "";
-        for (int l = 0; l < n; ++l) {
-            for (int i = 0; i + l < n; ++i) {
+        for (int l = 0; l < n; l++) {
+            for (int i = 0; i + l < n; i++) {
                 int j = i + l;
                 if (l == 0) {
                     dp[i][j] = true;
