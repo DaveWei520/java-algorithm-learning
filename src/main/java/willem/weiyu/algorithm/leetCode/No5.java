@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 /**
- * @Author weiyu005@ke.com
+ * @Author willem
  * @Description No5 给你一个字符串 s，找到 s 中最长的回文子串
  * @Date 2021/1/25 22:27
  */

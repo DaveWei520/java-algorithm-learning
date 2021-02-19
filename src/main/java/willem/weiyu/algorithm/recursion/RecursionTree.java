@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.recursion;
 
 /**
- * @author weiyu@gomefinance.com.cn
+ * @author willem
  * @description 递归打印数组全排列
  * @create 2018/7/17 14:59
  * @since 1.0.0

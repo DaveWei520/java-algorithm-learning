@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 /**
- * @Author weiyu005@ke.com
+ * @Author willem
  * @Description No8 将字符串转换成一个 32 位有符号整数
  * @Date 2021/2/2 22:34
  */

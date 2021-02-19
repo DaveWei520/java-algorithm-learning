@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 /**
- * @Author weiyu005@ke.com
+ * @Author willem
  * @Description No9 给你一个整数x ，如果x是一个回文整数，返回ture；否则，返回false
  * @Date 2021/2/4 22:18
  */

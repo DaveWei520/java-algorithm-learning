@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 /**
- * @Author weiyu005@ke.com
+ * @Author willem
  * @Description No10 给你一个字符串s和一个字符规律p，请你来实现一个支持'.'和'*'的正则表达式匹配
  * @Date 2021/2/6 18:16
  */
