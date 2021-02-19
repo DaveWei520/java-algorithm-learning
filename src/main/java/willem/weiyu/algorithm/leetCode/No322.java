@@ -6,6 +6,7 @@ import java.util.Arrays;
  * @author: willem
  * @create: 2021/02/19 15:45
  * @description: 给定不同面额的硬币coins 和一个总金额amount。编写一个函数来计算可以凑成总金额所需的最少的硬币个数。如果没有任何一种硬币组合能组成总金额，返回-1
+ * https://leetcode-cn.com/problems/coin-change
  */
 public class No322 {
 
@@ -20,6 +21,7 @@ public class No322 {
         if (coins == null || coins.length == 0 || amount ==0){
             return -1;
         }
+        //凑成amount金额的硬币数最多只可能等于amount，所以使用amount+1就可等价于正无穷，方便后续取最小值
         int max = amount + 1;
         //数组下标为当前金额
         int[] dp = new int[amount + 1];
@@ -27,9 +29,10 @@ public class No322 {
         dp[0] = 0;
         for (int i = 1; i <= amount; i++) {
             for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) {
-                    dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
+                if (coins[j] > i){
+                    continue;
                 }
+                dp[i] = Math.min(dp[i], dp[i - coins[j]] + 1);
             }
         }
         return dp[amount] > amount ? -1 : dp[amount];
