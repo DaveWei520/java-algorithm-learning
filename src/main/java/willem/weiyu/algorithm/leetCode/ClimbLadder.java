@@ -30,6 +30,11 @@ public class ClimbLadder {
         return jump;
     }
 
+    /**
+     * 动态规划求解
+     * @param ladder
+     * @return
+     */
     public static int solution2(int ladder){
         if (ladder <= 2){
             return ladder;
