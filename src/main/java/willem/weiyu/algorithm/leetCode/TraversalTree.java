@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * @author: willem
  * @create: 2021/02/03 23:35
- * @description:
+ * @description: 树的遍历一般分为前序遍历、中序遍历、后序遍历、层序遍历。图的遍历分为深度优先遍历（前/中/后序遍历）、广度优先遍历（层序遍历）
  */
 public class TraversalTree {
     public static class TreeNode{
