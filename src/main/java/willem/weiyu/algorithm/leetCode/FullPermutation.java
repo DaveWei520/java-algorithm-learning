@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author: willem
  * @create: 2021/02/20 10:24
- * @description:
+ * @description: 给定一个字符串，输出其全排列
  */
 public class FullPermutation {
 
