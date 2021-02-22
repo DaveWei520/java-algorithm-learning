@@ -3,12 +3,11 @@ package willem.weiyu.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 堆排序
- * 堆排序是一种选择排序，它的最坏，最好，平均时间复杂度均为O(nlogn)，不稳定排序
- *
- * 基本思想：将待排序序列构造成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。
+ * 堆排序：将待排序序列构造成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。
  * 将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构造成一个堆，
  * 这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。
+ * 时间复杂度：O(nlogn)
+ * 空间复杂度：O(1)
  */
 public class HeapSort {
 
@@ -20,7 +19,6 @@ public class HeapSort {
             //交换堆顶和最后一个元素
             swap(array, 0, length - i - 1);
         }
-        System.out.println("堆排序后===" + Arrays.toString(array));
     }
 
     private static void buildMaxHeap(int[] array, int lastIndex) {
@@ -61,6 +59,8 @@ public class HeapSort {
 
     public static void main(String[] args) {
         int[] array = new int[]{20, 7, 28, 32, 1, 9, 5, 2};
+        System.out.println("堆排序前=>" + Arrays.toString(array));
         headSort(array);
+        System.out.println("堆排序后=>" + Arrays.toString(array));
     }
 }

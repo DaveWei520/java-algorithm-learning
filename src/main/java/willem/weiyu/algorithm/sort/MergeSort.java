@@ -3,11 +3,12 @@ package willem.weiyu.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 归并排序
- * 基本思想：归并排序是建立在归并操作上的一种有效的排序算法,
+ * 归并排序：归并排序是建立在归并操作上的一种有效的排序算法,
  * 该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
  * 将已有序的子序列合并，得到完全有序的序列；
  * 即先使每个子序列有序，再使子序列段间有序。
+ * 时间复杂度：O(nlogn)
+ * 空间复杂度：O(n)
  */
 public class MergeSort {
 
@@ -15,7 +16,6 @@ public class MergeSort {
         //在排序前，先建立一个长度等于原数组的临时数组，避免递归中频繁开辟空间
         int[] temp = new int[array.length];
         divide(array, 0, array.length - 1, temp);
-        System.out.println("归并排序后===" + Arrays.toString(array));
     }
 
     private static void divide(int[] array, int left, int right, int[] temp) {
@@ -59,6 +59,8 @@ public class MergeSort {
 
     public static void main(String[] args) {
         int[] array = new int[]{20, 7, 28, 32, 1, 9, 5, 2};
+        System.out.println("归并排序前=>" + Arrays.toString(array));
         mergeSort(array);
+        System.out.println("归并排序后=>" + Arrays.toString(array));
     }
 }

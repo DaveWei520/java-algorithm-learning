@@ -3,13 +3,7 @@ package willem.weiyu.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 冒泡排序
- *
- * 基本思想：比较相邻的元素。如果第一个比第二个大，就交换他们两个。
- * 对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。
- * 在这一点，最后的元素应该会是最大的数。
- * 针对所有的元素重复以上的步骤，除了最后一个。
- * 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
+ * 冒泡排序：在要排序的一组数中，对当前还未排好序的范围内的全部数，自上而下对相邻的两个数依次进行比较和调整，让较大的数往下沉，较小的往上冒。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换
  *
  * 时间复杂度O(n^2)
  * 空间复杂度O(1)
@@ -27,11 +21,12 @@ public class BubbleSort {
                 }
             }
         }
-        System.out.println("冒泡排序后===" + Arrays.toString(array));
     }
 
     public static void main(String[] args) {
         int[] array = new int[]{20, 7, 28, 32, 1, 9, 5, 2};
+        System.out.println("冒泡排序前=>" + Arrays.toString(array));
         bubbleSort(array);
+        System.out.println("冒泡排序后=>" + Arrays.toString(array));
     }
 }

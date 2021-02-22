@@ -3,10 +3,7 @@ package willem.weiyu.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * 选择排序
- *
- * 基本思想：从未排好的部分的第一个作为最小（最大）的，然后依次和剩余的比较，如果有更小（更大）的，
- * 记下下标，以此作为新的最小（最大）值，继续比较，一趟结束后，可以得到最小值
+ * 选择排序：在要排序的一组数中，选出最小的一个数与第一个位置的数交换；然后在剩下的数当中再找最小的与第二个位置的数交换，如此循环到倒数第二个数和最后一个数比较为止
  *
  * 时间复杂度O(n^2)
  * 空间复杂度O(1)
@@ -14,8 +11,9 @@ import java.util.Arrays;
 public class SelectSort {
 
     public static void selectSort(int[] array) {
-        if (array.length < 1)
+        if (array.length < 1){
             return;
+        }
         for (int i = 0; i < array.length; i++) {
             int pos = i;
             int value = array[i];
@@ -28,11 +26,12 @@ public class SelectSort {
             array[pos] = array[i];
             array[i] = value;
         }
-        System.out.println("排序后===" + Arrays.toString(array));
     }
 
     public static void main(String[] args) {
         int[] array = new int[]{20, 7, 28, 32, 1, 9, 5, 2};
+        System.out.println("排序前=>" + Arrays.toString(array));
         selectSort(array);
+        System.out.println("排序后=>" + Arrays.toString(array));
     }
 }

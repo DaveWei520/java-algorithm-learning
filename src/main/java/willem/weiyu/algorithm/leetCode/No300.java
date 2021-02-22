@@ -13,6 +13,8 @@ public class No300 {
     /**
      * dp[i]表示以nums[i]这个数字结尾的最长递增子序列的长度
      * dp[i]初始值为1，因为nums[i]结尾的最长递增子序列起码包含自己，故数组nums最长子序列长度为dp数组的最大值
+     * 时间复杂度O(n^2)，n为数组长度
+     * 空间复杂度O(n)，n为数组长度
      * @param nums
      * @return
      */
@@ -25,6 +27,7 @@ public class No300 {
         for (int i = 0; i < nums.length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]){
+                    //如果nums[i] > nums[j]，即最大子序列长度为dp[j]+1
                     dp[i] = Math.max(dp[i],dp[j]+1);
                 }
             }
