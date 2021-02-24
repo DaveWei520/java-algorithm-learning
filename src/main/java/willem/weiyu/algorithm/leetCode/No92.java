@@ -1,5 +1,8 @@
 package willem.weiyu.algorithm.leetCode;
 
+import willem.weiyu.algorithm.ListNode;
+import willem.weiyu.algorithm.Print;
+
 /**
  * @author: willem
  * @create: 2021/02/23 12:47
@@ -7,12 +10,6 @@ package willem.weiyu.algorithm.leetCode;
  * https://leetcode-cn.com/problems/reverse-linked-list-ii/
  */
 public class No92 {
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
 
     /**
      * 时间复杂度：O(n)，n为链表长度
@@ -33,7 +30,7 @@ public class No92 {
         ListNode cur = head, prev = null;
         while (m > 1) {
             prev = cur;
-            cur = cur.next;
+            cur = cur.getNext();
             m--;
             n--;
         }
@@ -44,8 +41,8 @@ public class No92 {
         // Iteratively reverse the nodes until n becomes 0.
         ListNode third = null;
         while (n > 0) {
-            third = cur.next;
-            cur.next = prev;
+            third = cur.getNext();
+            cur.setNext(prev);
             prev = cur;
             cur = third;
             n--;
@@ -53,27 +50,12 @@ public class No92 {
 
         // Adjust the final connections as explained in the algorithm
         if (con != null) {
-            con.next = prev;
+            con.setNext(prev);
         } else {
             head = prev;
         }
 
-        tail.next = cur;
-    }
-
-    public static void print(ListNode node){
-        if (node == null){
-            return;
-        }
-        ListNode cur = node;
-        while (cur != null) {
-            System.out.print(cur.val+"=>");
-            if (cur.next == null){
-                break;
-            }
-            cur = cur.next;
-        }
-        System.out.println();
+        tail.setNext(cur);
     }
 
     public static void main(String[] args) {
@@ -82,14 +64,14 @@ public class No92 {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.next = two;
-        two.next = three;
-        three.next = four;
-        four.next = five;
+        one.setNext(two);
+        two.setNext(three);
+        three.setNext(four);
+        four.setNext(five);
         System.out.println("反转前======");
-        print(one);
+        Print.printListNode(one);
         System.out.println("反转后======");
         solution(one,2,4);
-        print(one);
+        Print.printListNode(one);
     }
 }

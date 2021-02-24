@@ -9,8 +9,9 @@ package willem.weiyu.algorithm.recursion;
 public class RecursionTree {
 
     public static void permutation(char[] arr, int from, int to){
-        if (to < 1)
+        if (to < 1) {
             return;
+        }
         if (from == to) {
             System.out.println(arr);
         }else{
