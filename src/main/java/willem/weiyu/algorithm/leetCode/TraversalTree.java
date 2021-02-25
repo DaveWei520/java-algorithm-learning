@@ -17,6 +17,16 @@ public class TraversalTree {
      * 前序遍历
      * @param root
      */
+    public static void preTraversalRecursion(TreeNode root){
+        System.out.print(root.getVal()+"->");
+        preTraversalRecursion(root.getLeft());
+        preTraversalRecursion(root.getRight());
+    }
+
+    /**
+     * 前序遍历
+     * @param root
+     */
     public static void preTraversal(TreeNode root){
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
@@ -37,20 +47,42 @@ public class TraversalTree {
      * 中序遍历
      * @param root
      */
+    public static void inTraversalRecursion(TreeNode root){
+        inTraversalRecursion(root.getLeft());
+        System.out.print(root.getVal()+"->");
+        inTraversalRecursion(root.getRight());
+    }
+
+    /**
+     * 中序遍历
+     * @param root
+     */
     public static void inTraversal(TreeNode root){
         Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while (node != null || !stack.isEmpty()){
-            if (node != null) {
+            //入栈所有做节点
+            while (node != null) {
                 stack.push(node);
                 node = node.getLeft();
-            } else {
-                TreeNode tem = stack.pop();
-                System.out.print(tem.getVal()+"->");
-                node = tem.getRight();
             }
+            node = stack.pop();
+            System.out.print(node.getVal()+"->");
+            //指向当前节点的右节点
+            node = node.getRight();
+
         }
         System.out.println("");
+    }
+
+    /**
+     * 后序遍历
+     * @param root
+     */
+    public static void postTraversalRecursion(TreeNode root){
+        postTraversalRecursion(root.getLeft());
+        postTraversalRecursion(root.getRight());
+        System.out.print(root.getVal()+"->");
     }
 
     /**
@@ -67,8 +99,7 @@ public class TraversalTree {
             cur = stack.peek();
             if ((cur.getLeft() == null && cur.getRight() == null) || (pre != null && (pre == cur.getLeft() || pre == cur.getRight()))) {
                 System.out.print(cur.getVal() + "->");
-                stack.pop();
-                pre = cur;
+                pre = stack.pop();
             } else {
                 if (cur.getRight() != null){
                     stack.push(cur.getRight());
