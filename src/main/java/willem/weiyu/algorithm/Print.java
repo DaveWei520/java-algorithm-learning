@@ -32,6 +32,14 @@ public class Print {
         }
     }
 
+    public static void printArr(int[] objArr){
+        if (objArr == null || objArr.length < 1){
+            return;
+        }
+        Arrays.stream(objArr).forEach(obj-> System.out.print(obj+","));
+        System.out.println("");
+    }
+
     public static void printMultiArr(int[][] intArr){
         if (intArr == null || intArr.length < 1){
             return;
