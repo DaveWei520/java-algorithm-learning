@@ -1,5 +1,8 @@
 package willem.weiyu.algorithm.leetCode;
 
+import willem.weiyu.algorithm.ListNode;
+import willem.weiyu.algorithm.Print;
+
 /**
  * @author: willem
  * @create: 2021/02/21 16:01
@@ -7,19 +10,6 @@ package willem.weiyu.algorithm.leetCode;
  * https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
  */
 public class No19 {
-    public static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-
-        @Override
-        public String toString() {
-            return "ListNode{val=" + val +'}';
-        }
-    }
-
     /**
      * 将倒数n变为正向，并让需要删除的节点，其前驱节点指向其后续节点
      * 时间复杂度：O(n)，n为链表的长度
@@ -28,7 +18,7 @@ public class No19 {
      * @param n
      * @return
      */
-    public static ListNode solution(ListNode head,int n){
+    public static ListNode solution(ListNode head, int n){
         int len = getLen(head);
         int index = len - n;
         if (index < 0){
@@ -36,9 +26,9 @@ public class No19 {
         }
         ListNode deleteNode = head;
         for (int i = 0; i < index - 1; i++) {
-            deleteNode = deleteNode.next;
+            deleteNode = deleteNode.getNext();
         }
-        deleteNode.next = deleteNode.next.next;
+        deleteNode.setNext(deleteNode.getNext().getNext());
         return head;
     }
 
@@ -50,9 +40,9 @@ public class No19 {
             len++;
         }
         ListNode count = head;
-        while (count.next != null){
+        while (count.getNext() != null){
             len ++;
-            count = count.next;
+            count = count.getNext();
         }
         return len;
     }
@@ -63,17 +53,14 @@ public class No19 {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.next = two;
-        two.next = three;
-        three.next = four;
-        four.next = five;
+        one.setNext(two);
+        two.setNext(three);
+        three.setNext(four);
+        four.setNext(five);
         int n = 3;
 
         ListNode node = solution(one, n);
-        while(node != null){
-            System.out.print(node+"=>");
-            node = node.next;
-        }
+        Print.printListNode(node);
         System.out.println();
     }
 }
