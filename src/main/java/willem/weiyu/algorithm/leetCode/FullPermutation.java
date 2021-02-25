@@ -11,7 +11,8 @@ import java.util.List;
 public class FullPermutation {
 
     /**
-     * shi jian
+     * 时间复杂度：O(n)
+     * 空间复杂度：O(1)
      * @param str
      */
     public static void solution(String str){
