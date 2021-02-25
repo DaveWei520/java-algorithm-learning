@@ -61,4 +61,11 @@ public class Print {
         }
         System.out.println();
     }
+
+    public static void swap(Object[] obj, int from, int to) {
+        Object temp = obj[from];
+        obj[from] = obj[to];
+        obj[to] = temp;
+    }
+
 }

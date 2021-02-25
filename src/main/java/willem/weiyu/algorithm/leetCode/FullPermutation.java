@@ -10,6 +10,10 @@ import java.util.List;
  */
 public class FullPermutation {
 
+    /**
+     * shi jian
+     * @param str
+     */
     public static void solution(String str){
         if (str == null || str.isEmpty()){
             return;
