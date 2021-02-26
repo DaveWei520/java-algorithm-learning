@@ -1,5 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
+import willem.weiyu.algorithm.Print;
+
 /**
  * @author: willem
  * @create: 2021/01/29 17:02
@@ -7,20 +9,26 @@ package willem.weiyu.algorithm.leetCode;
  */
 public class ReverseArr {
 
-    public static void solution(int[] arr, int head, int end){
+    /**
+     * 时间复杂度：O(n/2)，为数组的长度
+     * 空间复杂度：O(1)
+     * @param arr
+     * @param head
+     * @param end
+     * @return
+     */
+    public static int[] solution(int[] arr, int head, int end){
         if (head >= end){
-            for (int i = 0; i < arr.length; i++) {
-                System.out.println(arr[i]);
-            }
-            return;
+            return arr;
         }
-        int temp = arr[head];
-        arr[head] = arr[end];
-        arr[end] = temp;
+        arr[head] = arr[head] ^ arr[end];
+        arr[end] = arr[head] ^ arr[end];
+        arr[head] = arr[head] ^ arr[end];
         solution(arr, ++head, --end);
+        return arr;
     }
     public static void main(String[] args) {
         int[] arr = new int[]{1,2,3,4,5,6};
-        solution(arr,0,arr.length - 1);
+        Print.printArr(solution(arr,0,arr.length - 1));
     }
 }
