@@ -12,7 +12,7 @@ import willem.weiyu.algorithm.Print;
 public class No25 {
 
     /**
-     * 时间复杂度：O()
+     * 时间复杂度：O(n)，n为链表的长度
      * 空间复杂度：O(1)
      * @param node
      * @param k
