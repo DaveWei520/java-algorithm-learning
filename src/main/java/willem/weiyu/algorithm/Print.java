@@ -1,6 +1,7 @@
 package willem.weiyu.algorithm;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Author willem
@@ -76,4 +77,11 @@ public class Print {
         obj[to] = temp;
     }
 
+    public static void printList(List<? extends Object> list){
+        if (list == null || list.isEmpty()) {
+            return;
+        }
+        list.stream().forEach(obj -> System.out.print(obj.toString()+","));
+        System.out.println();
+    }
 }
