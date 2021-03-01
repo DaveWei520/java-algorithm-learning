@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Print {
 
-    public static void printArr(Object[] objArr){
+    public static <T extends Object> void printArr(T[] objArr){
         if (objArr == null || objArr.length < 1){
             return;
         }
@@ -18,15 +18,15 @@ public class Print {
         System.out.println("");
     }
 
-    public static void printMultiArr(Object[][] objArr){
+    public static <T extends Object> void printMultiArr(T[][] objArr){
         if (objArr == null || objArr.length < 1){
             return;
         }
-        for (Object[] obj : objArr) {
+        for (T[] obj : objArr) {
             if (obj == null || obj.length < 1){
                 continue;
             }
-            for (Object o : obj) {
+            for (T o : obj) {
                 System.out.print(o.toString()+",");
             }
             System.out.println("");
@@ -71,8 +71,8 @@ public class Print {
         System.out.println();
     }
 
-    public static void swap(Object[] obj, int from, int to) {
-        Object temp = obj[from];
+    public static <T extends Object> void swap(T[] obj, int from, int to) {
+        T temp = obj[from];
         obj[from] = obj[to];
         obj[to] = temp;
     }
