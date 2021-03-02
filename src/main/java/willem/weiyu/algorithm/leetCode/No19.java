@@ -26,9 +26,9 @@ public class No19 {
         }
         ListNode deleteNode = head;
         for (int i = 0; i < index - 1; i++) {
-            deleteNode = deleteNode.getNext();
+            deleteNode = deleteNode.next;
         }
-        deleteNode.setNext(deleteNode.getNext().getNext());
+        deleteNode.next = deleteNode.next.next;
         return head;
     }
 
@@ -40,9 +40,9 @@ public class No19 {
             len++;
         }
         ListNode count = head;
-        while (count.getNext() != null){
+        while (count.next != null){
             len ++;
-            count = count.getNext();
+            count = count.next;
         }
         return len;
     }
@@ -53,10 +53,10 @@ public class No19 {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.setNext(two);
-        two.setNext(three);
-        three.setNext(four);
-        four.setNext(five);
+        one.next=two;
+        two.next=three;
+        three.next=four;
+        four.next=five;
         int n = 3;
 
         ListNode node = solution(one, n);

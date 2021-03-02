@@ -24,33 +24,33 @@ public class No21 {
         ListNode cur = head;
         while (node != null || other != null){
             if (node == null){
-                cur.setNext(other);
+                cur.next=other;
                 cur = other;
-                other = other.getNext();
+                other = other.next;
                 continue;
             }
             if (other == null) {
-                cur.setNext(node);
+                cur.next=node;
                 cur = node;
-                node = node.getNext();
+                node = node.next;
                 continue;
             }
-            if (node.getVal() < other.getVal()){
-                cur.setNext(node);
+            if (node.val < other.val){
+                cur.next=node;
                 cur = node;
-                node = node.getNext();
-            } else if (node.getVal() > other.getVal()){
-                cur.setNext(other);
+                node = node.next;
+            } else if (node.val > other.val){
+                cur.next=other;
                 cur = other;
-                other = other.getNext();
+                other = other.next;
             } else {
-                cur.setNext(node);
+                cur.next=node;
                 cur = node;
-                cur.setNext(other);
+                cur.next=other;
                 cur = other;
             }
         }
-        return head.getNext();
+        return head.next;
     }
 
     public static void main(String[] args) {
@@ -60,10 +60,10 @@ public class No21 {
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
         ListNode six = new ListNode(6);
-        one.setNext(three);
-        three.setNext(five);
-        two.setNext(four);
-        four.setNext(six);
+        one.next=three;
+        three.next=five;
+        two.next=four;
+        four.next=six;
         Print.printListNode(solution(one,two));
     }
 }

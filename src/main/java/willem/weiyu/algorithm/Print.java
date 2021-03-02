@@ -62,11 +62,11 @@ public class Print {
         }
         ListNode cur = node;
         while (cur != null) {
-            System.out.print(cur.getVal()+"=>");
-            if (cur.getNext() == null){
+            System.out.print(cur.val+"=>");
+            if (cur.next == null){
                 break;
             }
-            cur = cur.getNext();
+            cur = cur.next;
         }
         System.out.println();
     }

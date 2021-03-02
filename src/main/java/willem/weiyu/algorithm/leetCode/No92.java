@@ -30,7 +30,7 @@ public class No92 {
         ListNode cur = head, prev = null;
         while (m > 1) {
             prev = cur;
-            cur = cur.getNext();
+            cur = cur.next;
             m--;
             n--;
         }
@@ -41,8 +41,8 @@ public class No92 {
         // Iteratively reverse the nodes until n becomes 0.
         ListNode third = null;
         while (n > 0) {
-            third = cur.getNext();
-            cur.setNext(prev);
+            third = cur.next;
+            cur.next = prev;
             prev = cur;
             cur = third;
             n--;
@@ -50,12 +50,12 @@ public class No92 {
 
         // Adjust the final connections as explained in the algorithm
         if (con != null) {
-            con.setNext(prev);
+            con.next=prev;
         } else {
             head = prev;
         }
 
-        tail.setNext(cur);
+        tail.next=cur;
     }
 
     public static void main(String[] args) {
@@ -64,10 +64,10 @@ public class No92 {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.setNext(two);
-        two.setNext(three);
-        three.setNext(four);
-        four.setNext(five);
+        one.next=two;
+        two.next=three;
+        three.next=four;
+        four.next=five;
         System.out.println("反转前======");
         Print.printListNode(one);
         System.out.println("反转后======");

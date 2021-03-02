@@ -28,10 +28,10 @@ public class No25 {
             if (tail == null){
                 return node;
             }
-            tail = tail.getNext();
+            tail = tail.next;
         }
         ListNode newHead = reverse(head, tail);
-        head.setNext(solution(tail, k));
+        head.next=solution(tail, k);
         return newHead;
     }
 
@@ -40,8 +40,8 @@ public class No25 {
         pre = null; cur = head; nxt = head;
         // while 终止的条件改一下就行了
         while (cur != tail) {
-            nxt = cur.getNext();
-            cur.setNext(pre);
+            nxt = cur.next;
+            cur.next=pre;
             pre = cur;
             cur = nxt;
         }
@@ -55,10 +55,10 @@ public class No25 {
         ListNode three = new ListNode(3);
         ListNode four = new ListNode(4);
         ListNode five = new ListNode(5);
-        one.setNext(two);
-        two.setNext(three);
-        three.setNext(four);
-        four.setNext(five);
+        one.next=two;
+        two.next=three;
+        three.next=four;
+        four.next=five;
         int k = 3;
         System.out.println("翻转之前===");
         Print.printListNode(one);
