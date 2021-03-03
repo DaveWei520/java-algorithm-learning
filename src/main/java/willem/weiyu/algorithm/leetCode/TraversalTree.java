@@ -18,9 +18,9 @@ public class TraversalTree {
      * @param root
      */
     public static void preTraversalRecursion(TreeNode root){
-        System.out.print(root.getVal()+"->");
-        preTraversalRecursion(root.getLeft());
-        preTraversalRecursion(root.getRight());
+        System.out.print(root.val+"->");
+        preTraversalRecursion(root.left);
+        preTraversalRecursion(root.right);
     }
 
     /**
@@ -32,12 +32,12 @@ public class TraversalTree {
         stack.push(root);
         while (!stack.isEmpty()){
             TreeNode node = stack.pop();
-            System.out.print(node.getVal()+"->");
-            if (node.getRight() != null){
-                stack.push(node.getRight());
+            System.out.print(node.val+"->");
+            if (node.right != null){
+                stack.push(node.right);
             }
-            if (node.getLeft() != null) {
-                stack.push(node.getLeft());
+            if (node.left != null) {
+                stack.push(node.left);
             }
         }
         System.out.println("");
@@ -48,9 +48,9 @@ public class TraversalTree {
      * @param root
      */
     public static void inTraversalRecursion(TreeNode root){
-        inTraversalRecursion(root.getLeft());
-        System.out.print(root.getVal()+"->");
-        inTraversalRecursion(root.getRight());
+        inTraversalRecursion(root.left);
+        System.out.print(root.val+"->");
+        inTraversalRecursion(root.right);
     }
 
     /**
@@ -64,12 +64,12 @@ public class TraversalTree {
             //入栈所有做节点
             while (node != null) {
                 stack.push(node);
-                node = node.getLeft();
+                node = node.left;
             }
             node = stack.pop();
-            System.out.print(node.getVal()+"->");
+            System.out.print(node.val+"->");
             //指向当前节点的右节点
-            node = node.getRight();
+            node = node.right;
 
         }
         System.out.println("");
@@ -80,9 +80,9 @@ public class TraversalTree {
      * @param root
      */
     public static void postTraversalRecursion(TreeNode root){
-        postTraversalRecursion(root.getLeft());
-        postTraversalRecursion(root.getRight());
-        System.out.print(root.getVal()+"->");
+        postTraversalRecursion(root.left);
+        postTraversalRecursion(root.right);
+        System.out.print(root.val+"->");
     }
 
     /**
@@ -97,16 +97,16 @@ public class TraversalTree {
 
         while (!stack.empty()) {
             cur = stack.peek();
-            if ((cur.getLeft() == null && cur.getRight() == null) || (pre != null && (pre == cur.getLeft() || pre == cur.getRight()))) {
-                System.out.print(cur.getVal() + "->");
+            if ((cur.left == null && cur.right == null) || (pre != null && (pre == cur.left || pre == cur.right))) {
+                System.out.print(cur.val + "->");
                 pre = stack.pop();
             } else {
-                if (cur.getRight() != null){
-                    stack.push(cur.getRight());
+                if (cur.right != null){
+                    stack.push(cur.right);
                 }
 
-                if (cur.getLeft() != null){
-                    stack.push(cur.getLeft());
+                if (cur.left != null){
+                    stack.push(cur.left);
                 }
             }
         }
@@ -122,12 +122,12 @@ public class TraversalTree {
         queue.offer(root);
         while (!queue.isEmpty()){
             TreeNode node = queue.poll();
-            System.out.print(node.getVal()+"->");
-            if (node.getLeft() != null){
-                queue.offer(node.getLeft());
+            System.out.print(node.val+"->");
+            if (node.left != null){
+                queue.offer(node.left);
             }
-            if (node.getRight() != null){
-                queue.offer(node.getRight());
+            if (node.right != null){
+                queue.offer(node.right);
             }
         }
         System.out.println("");
@@ -143,31 +143,32 @@ public class TraversalTree {
      */
     public static void main(String[] args) {
         TreeNode root = new TreeNode();
-        root.setVal(1);
+        root.val = 1;
 
         TreeNode two = new TreeNode();
-        two.setVal(2);
+        two.val = 2;
 
         TreeNode three = new TreeNode();
-        three.setVal(3);
+        three.val = 3;
 
         TreeNode four = new TreeNode();
-        four.setVal(4);
+        four.val = 4;
 
         TreeNode five = new TreeNode();
-        five.setVal(5);
+        five.val = 5;
 
         TreeNode six = new TreeNode();
-        six.setVal(6);
+        six.val = 6;
 
         TreeNode seven = new TreeNode();
-        seven.setVal(7);
-        root.setLeft(two);
-        root.setRight(three);
-        two.setLeft(four);
-        two.setRight(five);
-        three.setLeft(six);
-        three.setRight(seven);
+        seven.val = 7;
+
+        root.left = two;
+        root.right = three;
+        two.left = four;
+        two.right = five;
+        three.left = six;
+        three.right = seven;
 
         System.out.println("======pre======");
         preTraversal(root);

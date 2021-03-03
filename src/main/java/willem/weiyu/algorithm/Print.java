@@ -1,7 +1,9 @@
 package willem.weiyu.algorithm;
 
+import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Queue;
 
 /**
  * @Author willem
@@ -83,5 +85,21 @@ public class Print {
         }
         list.stream().forEach(obj -> System.out.print(obj.toString()+","));
         System.out.println();
+    }
+
+    public static void printTree(TreeNode node){
+        Queue<TreeNode> queue = new ArrayDeque();
+        queue.offer(node);
+        while (!queue.isEmpty()){
+            TreeNode temp = queue.poll();
+            System.out.print(temp.val+"->");
+            if (temp.left != null){
+                queue.offer(temp.left);
+            }
+            if (temp.right != null){
+                queue.offer(temp.right);
+            }
+        }
+        System.out.println("");
     }
 }
