@@ -1,5 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
+import willem.weiyu.algorithm.Print;
 import willem.weiyu.algorithm.TreeNode;
 
 import java.util.ArrayDeque;
@@ -15,6 +16,12 @@ import java.util.Queue;
  */
 public class No116 {
 
+    /**
+     * 时间复杂度：O(n)，n为节点的个数
+     * 空间复杂度：O(mn)，m为深度，n为个数
+     * @param root
+     * @return
+     */
     public static List<TreeNode> solution(TreeNode root){
         if (root == null){
             return null;
@@ -48,6 +55,40 @@ public class No116 {
         append(list, queue);
     }
 
+    /**
+     * 时间复杂度：O(N)。每个节点会被访问一次且只会被访问一次，即从队列中弹出，并建立next指针。
+     * 空间复杂度：O(N)。这是一棵完美二叉树，它的最后一个层级包含N/2个节点。广度优先遍历的复杂度取决于一个层级上的最大元素数量。这种情况下空间复杂度为O(N)
+     * @param root
+     * @return
+     */
+    public static TreeNode solution2(TreeNode root){
+        if (root == null){
+            return null;
+        }
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+            // 记录当前队列大小
+            int size = queue.size();
+            // 遍历这一层的所有节点
+            for (int i = 0; i < size; i++) {
+                // 从队首取出元素
+                TreeNode node = queue.poll();
+                // 连接
+                /*if (i < size - 1) {
+                    node.next = queue.peek();
+                }*/
+                // 拓展下一层节点
+                if (node.left != null) {
+                    queue.add(node.left);
+                }
+                if (node.right != null) {
+                    queue.add(node.right);
+                }
+            }
+        }
+        return root;
+    }
 
     public static void main(String[] args) {
         /*
@@ -81,5 +122,8 @@ public class No116 {
                 System.out.println();
             });
         }
+
+        TreeNode node = solution2(root);
+        Print.printTree(node);
     }
 }
