@@ -124,6 +124,6 @@ public class No116 {
         }
 
         TreeNode node = solution2(root);
-        Print.printTree(node);
+        Print.printLevelTree(node);
     }
 }

@@ -1,9 +1,6 @@
 package willem.weiyu.algorithm;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @Author willem
@@ -87,7 +84,31 @@ public class Print {
         System.out.println();
     }
 
-    public static void printTree(TreeNode node){
+    /**
+     * 前序遍历
+     * @param node
+     */
+    public static void printPreTree(TreeNode node){
+        Deque<TreeNode> deque = new ArrayDeque<>();
+        deque.push(node);
+        while (!deque.isEmpty()) {
+            TreeNode temp = deque.pop();
+            System.out.print(temp.val+"->");
+            if (temp.right != null){
+                deque.push(temp.right);
+            }
+            if (temp.left != null){
+                deque.push(temp.left);
+            }
+        }
+        System.out.println();
+    }
+
+    /**
+     * 层序遍历
+     * @param node
+     */
+    public static void printLevelTree(TreeNode node){
         Queue<TreeNode> queue = new ArrayDeque();
         queue.offer(node);
         while (!queue.isEmpty()){

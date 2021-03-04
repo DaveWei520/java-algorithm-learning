@@ -52,8 +52,8 @@ public class No226 {
         three.left = six;
         three.right = seven;
         System.out.println("翻转前===");
-        Print.printTree(root);
+        Print.printLevelTree(root);
         System.out.println("翻转后===");
-        Print.printTree(solution(root));
+        Print.printLevelTree(solution(root));
     }
 }
