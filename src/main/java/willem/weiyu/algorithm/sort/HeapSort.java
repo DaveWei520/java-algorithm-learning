@@ -52,9 +52,9 @@ public class HeapSort {
     }
 
     private static void swap(int[] array, int first, int last) {
-        int temp = array[first];
-        array[first] = array[last];
-        array[last] = temp;
+        array[first] = array[first] ^ array[last];
+        array[last] = array[first] ^ array[last];
+        array[first] = array[first] ^ array[last];
     }
 
     public static void main(String[] args) {
