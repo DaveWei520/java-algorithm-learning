@@ -3,6 +3,7 @@ package willem.weiyu.algorithm.leetCode;
 import willem.weiyu.algorithm.TreeNode;
 
 import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -92,10 +93,9 @@ public class TraversalTree {
     public static void postTraversal(TreeNode root){
         TreeNode cur, pre = null;
 
-        Stack<TreeNode> stack = new Stack<>();
+        Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
-
-        while (!stack.empty()) {
+        while (!stack.isEmpty()) {
             cur = stack.peek();
             if ((cur.left == null && cur.right == null) || (pre != null && (pre == cur.left || pre == cur.right))) {
                 System.out.print(cur.val + "->");
