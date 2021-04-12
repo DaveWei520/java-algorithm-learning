@@ -7,11 +7,14 @@ import java.util.Arrays;
  *
  * 基本思想：每步将一个待排序的记录，按其顺序码大小插入到前面已经排序的字序列的合适位置（从后向前找到合适位置后），直到全部插入排序完为止
  *
- * 时间复杂度O(n^2)
- * 空间复杂度O(1)
  */
 public class InsertSort {
 
+    /**
+     * 时间复杂度O(n^2)
+     * 空间复杂度O(1)
+     * @param array
+     */
     public static void insertSort(int[] array) {
         if (array.length < 1){
             return;

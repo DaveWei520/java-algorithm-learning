@@ -7,11 +7,15 @@ import java.util.Arrays;
  * 该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。
  * 将已有序的子序列合并，得到完全有序的序列；
  * 即先使每个子序列有序，再使子序列段间有序。
- * 时间复杂度：O(nlogn)
- * 空间复杂度：O(n)
+ *
  */
 public class MergeSort {
 
+    /**
+     * 时间复杂度：O(nlogn)
+     * 空间复杂度：O(n)
+     * @param array
+     */
     public static void mergeSort(int[] array) {
         //在排序前，先建立一个长度等于原数组的临时数组，避免递归中频繁开辟空间
         int[] temp = new int[array.length];
