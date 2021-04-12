@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @Author willem
@@ -65,9 +65,9 @@ public class No832 {
     public static void main(String[] args) {
         int[][] arr = new int[][]{{1,1,0,0},{1,0,0,1},{0,1,1,1},{1,0,1,0}};
         System.out.println("反转前======");
-        Print.printMultiArr(arr);
+        Utils.printMultiArr(arr);
         System.out.println("反转后======");
         solution(arr);
-        Print.printMultiArr(arr);
+        Utils.printMultiArr(arr);
     }
 }

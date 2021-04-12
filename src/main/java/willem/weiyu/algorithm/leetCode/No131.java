@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -58,7 +58,7 @@ public class No131 {
     public static void main(String[] args) {
         String str = "aab";
         String str2 = "a";
-        Print.printList(solution(str));
-        Print.printList(solution(str2));
+        Utils.printList(solution(str));
+        Utils.printList(solution(str2));
     }
 }

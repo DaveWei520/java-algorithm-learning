@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 import willem.weiyu.algorithm.ListNode;
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -60,7 +60,7 @@ public class No19 {
         int n = 3;
 
         ListNode node = solution(one, n);
-        Print.printListNode(node);
+        Utils.printListNode(node);
         System.out.println();
     }
 }

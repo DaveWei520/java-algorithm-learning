@@ -7,7 +7,7 @@ import java.util.*;
  * @Description
  * @Date 2021/2/24 22:33
  */
-public class Print {
+public class Utils {
 
     public static <T extends Object> void printArr(T[] objArr){
         if (objArr == null || objArr.length < 1){
@@ -74,6 +74,12 @@ public class Print {
         T temp = obj[from];
         obj[from] = obj[to];
         obj[to] = temp;
+    }
+
+    public static void swapInt(int[] arr, int from, int to) {
+        arr[from] = arr[from]^arr[to];
+        arr[to] = arr[from]^arr[to];
+        arr[from] = arr[from]^arr[to];
     }
 
     public static void printList(List<? extends Object> list){

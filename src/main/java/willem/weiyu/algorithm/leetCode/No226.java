@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 import willem.weiyu.algorithm.TreeNode;
 
 /**
@@ -52,8 +52,8 @@ public class No226 {
         three.left = six;
         three.right = seven;
         System.out.println("翻转前===");
-        Print.printLevelTree(root);
+        Utils.printLevelTree(root);
         System.out.println("翻转后===");
-        Print.printLevelTree(solution(root));
+        Utils.printLevelTree(solution(root));
     }
 }

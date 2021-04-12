@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 import willem.weiyu.algorithm.ListNode;
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -44,8 +44,8 @@ public class No24 {
         two.next = three;
         three.next = four;
         System.out.println("交换之前");
-        Print.printListNode(one);
+        Utils.printListNode(one);
         System.out.println("交换之后");
-        Print.printListNode(solution(one));
+        Utils.printListNode(solution(one));
     }
 }

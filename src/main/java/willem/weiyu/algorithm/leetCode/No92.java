@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 import willem.weiyu.algorithm.ListNode;
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -69,9 +69,9 @@ public class No92 {
         three.next=four;
         four.next=five;
         System.out.println("反转前======");
-        Print.printListNode(one);
+        Utils.printListNode(one);
         System.out.println("反转后======");
         solution(one,2,4);
-        Print.printListNode(one);
+        Utils.printListNode(one);
     }
 }

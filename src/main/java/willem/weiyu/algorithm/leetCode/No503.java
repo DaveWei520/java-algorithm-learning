@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -51,6 +51,6 @@ public class No503 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,1};
-        Print.printArr(solution(nums));
+        Utils.printArr(solution(nums));
     }
 }

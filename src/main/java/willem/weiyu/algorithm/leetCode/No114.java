@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 import willem.weiyu.algorithm.TreeNode;
 
 /**
@@ -62,9 +62,9 @@ public class No114 {
         two.right = four;
         five.right = six;
         System.out.println("展开前");
-        Print.printPreTree(root);
+        Utils.printPreTree(root);
         System.out.println("展开后");
         solution(root);
-        Print.printPreTree(root);
+        Utils.printPreTree(root);
     }
 }

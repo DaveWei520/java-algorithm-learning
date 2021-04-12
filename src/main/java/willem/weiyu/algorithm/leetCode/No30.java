@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -22,7 +22,7 @@ public class No30 {
         String s2 = "wordgoodgoodgoodbestword";
         String[] words2 = new String[]{"word","good","best","word"};
 
-        Print.printArr(solution(s, words));
-        Print.printArr(solution(s2, words2));
+        Utils.printArr(solution(s, words));
+        Utils.printArr(solution(s2, words2));
     }
 }

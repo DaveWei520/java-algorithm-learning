@@ -1,7 +1,7 @@
 package willem.weiyu.algorithm.leetCode;
 
 import willem.weiyu.algorithm.ListNode;
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @author: willem
@@ -67,6 +67,6 @@ public class No23 {
         third.next = third2;
 
         ListNode[] list = new ListNode[]{first, second, third};
-        Print.printListNode(solution(list));
+        Utils.printListNode(solution(list));
     }
 }

@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -43,6 +43,6 @@ public class No78 {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1,2,3};
-        Print.printList(solution(nums));
+        Utils.printList(solution(nums));
     }
 }

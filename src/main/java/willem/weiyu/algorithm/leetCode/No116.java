@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 import willem.weiyu.algorithm.TreeNode;
 
 import java.util.ArrayDeque;
@@ -124,6 +124,6 @@ public class No116 {
         }
 
         TreeNode node = solution2(root);
-        Print.printLevelTree(node);
+        Utils.printLevelTree(node);
     }
 }

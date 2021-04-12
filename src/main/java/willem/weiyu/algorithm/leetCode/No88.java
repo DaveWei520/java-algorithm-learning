@@ -1,6 +1,6 @@
 package willem.weiyu.algorithm.leetCode;
 
-import willem.weiyu.algorithm.Print;
+import willem.weiyu.algorithm.Utils;
 
 /**
  * @Author willem
@@ -61,6 +61,6 @@ public class No88 {
     public static void main(String[] args) {
         int[] num1 = new int[]{1,2,3,5};
         int[] num2 = new int[]{2,7,8,9};
-        Print.printArr(solution(num1,num2));
+        Utils.printArr(solution(num1,num2));
     }
 }
