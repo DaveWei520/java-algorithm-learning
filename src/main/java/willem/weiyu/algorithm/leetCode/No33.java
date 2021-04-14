@@ -11,6 +11,8 @@ package willem.weiyu.algorithm.leetCode;
 public class No33 {
 
     /**
+     * 时间复杂度：O(logn)，n为数组的长度
+     * 空间复杂度：O(1)
      * @param nums
      * @param target
      * @return
